@@ -1895,6 +1895,13 @@ typedef struct
 
 } cpuid_eax_01;
 
+struct cpuid_leaf_01
+{
+    decltype(cpuid_eax_01{}.cpuid_version_information)      eax;
+    decltype(cpuid_eax_01{}.cpuid_additional_information)   ebx;
+    decltype(cpuid_eax_01{}.cpuid_feature_information_ecx)  ecx;
+    decltype(cpuid_eax_01{}.cpuid_feature_information_edx)  edx;
+};
 
 /**
  * @brief Deterministic Cache Parameters Leaf
